@@ -95,4 +95,4 @@ jobs:
     - name: Register task definition
       id: register-task-definition
       run: |
-        aws ecs register-task-definition --family $ECS_TASK_DEFINITION_FAMILY --cli-input-json ${{ steps.task-def.outputs.task-definition }}
+        aws ecs register-task-definition --family $ECS_TASK_DEFINITION_FAMILY --cli-input-json file://${{ steps.task-def.outputs.task-definition }}
