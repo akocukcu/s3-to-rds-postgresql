@@ -29,12 +29,12 @@ on:
   workflow_dispatch:
 
 env:
-  AWS_REGION: eu-central-1                            # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: s3-to-rds-postgresql                # set this to your Amazon ECR repository name
-  ECS_TASK_DEFINITION: aws-ecs-task-definition.json   # set this to the path to your Amazon ECS task definition
-  ECS_TASK_DEFINITION_FAMILY: s3-to-rds-postgresql-td # set this to the path to your Amazon ECS task definition
-  CONTAINER_NAME: s3-to-rds-postgresql                # set this to the name of the container in the
-                                                      # containerDefinitions section of your task definition
+  AWS_REGION: eu-central-1                                   # set this to your preferred AWS region, e.g. us-west-1
+  ECR_REPOSITORY: s3-to-rds-postgresql                       # set this to your Amazon ECR repository name
+  ECS_TASK_DEFINITION: file://aws-ecs-task-definition.json   # set this to the path to your Amazon ECS task definition
+  ECS_TASK_DEFINITION_FAMILY: s3-to-rds-postgresql-td        # set this to the path to your Amazon ECS task definition
+  CONTAINER_NAME: s3-to-rds-postgresql                       # set this to the name of the container in the
+                                                             # containerDefinitions section of your task definition
 
 jobs:
   deploy:
