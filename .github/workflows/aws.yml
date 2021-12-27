@@ -82,3 +82,8 @@ jobs:
         task-definition: ${{ env.ECS_TASK_DEFINITION }}
         container-name: ${{ env.CONTAINER_NAME }}
         image: ${{ steps.build-image.outputs.image }}
+
+    - name: Register task definition
+      id: register-task-definition
+      run: |
+        aws ecs register-task-definition --family $ECS_TASK_DEFINITION_FAMILY --cli-input-json $ECS_TASK_DEFINITION
